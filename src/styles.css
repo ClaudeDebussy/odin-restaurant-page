@@ -87,7 +87,8 @@ body {
 
 #content h1,
 #content h2,
-#content p {
+#content p,
+#content img {
   margin-left: 3rem;
   margin-right: 3rem;
 }
@@ -105,6 +106,14 @@ body {
 #content h2 {
   margin-bottom: 1.7rem;
   font-style: italic;
+}
+
+#content img {
+  width: max(500px, 80%);
+  height:auto;
+  justify-self: center;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
 }
 
 #content p {
