@@ -31,9 +31,6 @@ function menu() {
 
   const menu = [antipasti, secondi, dolci];
   const menuNames = ["Antipasti", "Secondi", "Dolci"];
-  const placeholderTextMenuItem = "menuItem";
-  const placeholderTextMenuItemDescription = "menuItemDesc";
-  const menuItemNumber = 0;
   
   function displayMenu(menu){
     let nodeList = [];
@@ -58,7 +55,6 @@ function menu() {
         nodeList.push(menuItem, menuItemDesc);
       }
     }
-    console.log(nodeList);
     return nodeList;
   };  
 
