@@ -1,7 +1,9 @@
-import { setMultipleAttributes, appendChildren } from "./common";
+import { setMultipleAttributes, appendChildren, clearPage } from "./common";
 import restaurantBackground from "./restaurant_background.png";
 
 function homepage () {
+  clearPage();
+  
   const content = document.getElementById("content");  
   
   const title = document.createElement("h1");
@@ -42,12 +44,14 @@ function homepage () {
 
   appendChildren(
   content, 
-  [title, 
+  [
+    title, 
   subtitle, 
   img,   
   p1, p2, p3, p4, p5,
   signOff, 
-  signature]
+  signature
+]
   );  
 };
 

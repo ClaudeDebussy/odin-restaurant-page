@@ -1,7 +1,11 @@
 import "./styles.css";
 import { homepage } from "./homepage";
+import { menu } from "./menu";
+
+homepage();
 
 const homeButton = document.getElementById("home-button");
-homeButton.addEventListener("load", homepage());
+homeButton.addEventListener("click", homepage);
 
-console.log("test successful");
+const menuButton = document.getElementById("menu-button");
+menuButton.addEventListener("click", menu);

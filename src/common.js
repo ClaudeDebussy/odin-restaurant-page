@@ -10,7 +10,13 @@ function appendChildren(parent, listToAppend) {
   }
 }
 
+function clearPage() {
+  const content = document.getElementById("content");
+  content.innerHTML = "";
+}
+
 export {
   setMultipleAttributes, 
-  appendChildren
+  appendChildren,
+  clearPage
 };
