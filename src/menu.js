@@ -30,14 +30,22 @@ function menu() {
   ];
 
   const menu = [antipasti, secondi, dolci];
+  const menuNames = ["Antipasti", "Secondi", "Dolci"];
   const placeholderTextMenuItem = "menuItem";
   const placeholderTextMenuItemDescription = "menuItemDesc";
   const menuItemNumber = 0;
   
   function displayMenu(menu){
     let nodeList = [];
-    let menuItemNumber = 0;
+    let i = 0;
     for (let course of menu) {      
+      const courseName = document.createElement("p");
+      courseName.classList.add("menu-course");
+      courseName.textContent = menuNames[i];
+      i++;
+
+      nodeList.push(courseName);
+
       for (let item of course){
         const menuItem = document.createElement("p")
         menuItem.classList.add("menu-item");
@@ -50,32 +58,30 @@ function menu() {
         nodeList.push(menuItem, menuItemDesc);
       }
     }
+    console.log(nodeList);
     return nodeList;
   };  
 
   const houseWineAdvert = document.createElement("p");
   houseWineAdvert.textContent = "Add a glass of house wine for $6";
+  houseWineAdvert.classList.add("house-wine-advert");
 
   const houseWineAdvertCTA = document.createElement("p");
   houseWineAdvertCTA.textContent = "Ask your server for today's selections."
+  houseWineAdvertCTA.classList.add("house-wine-advert-CTA");
 
   let nodeListToAppend = [];
-  nodeListToAppend.push(title);
-  nodeListToAppend.push(subtitle);
+  nodeListToAppend.push(title, subtitle);
   const menuDisplayItems = displayMenu(menu);
   for (let i = 0; i < menuDisplayItems.length; i++) {
-    if (i % 2) {
-      menuDisplayItems[i].classList.add("menu-item");
-    } else {
-      menuDisplayItems[i].classList.add("menu-item-description");
-    }
     nodeListToAppend.push(menuDisplayItems[i]);
   }
+  nodeListToAppend.push(houseWineAdvert, houseWineAdvertCTA);
 
 
   appendChildren(
     content,
-    nodeListToAppend
+    nodeListToAppend,
   );
 };
 
